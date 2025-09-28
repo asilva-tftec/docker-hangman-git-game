@@ -35,7 +35,7 @@ jobs:
     # PASSO 4: Inicializar e preparar o Terraform
     - name: Terraform Init
       run: |
-        cd terrraform
+        cd terraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
@@ -46,7 +46,7 @@ jobs:
     # PASSO 5: Planejar a infraestrutura
     - name: Terraform Plan
       run: |
-        cd terrraform
+        cd terraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
@@ -57,7 +57,7 @@ jobs:
     # PASSO 6: Aplicar a infraestrutura básica
     - name: Terraform Apply
       run: |
-        cd terrraform
+        cd terraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
@@ -99,7 +99,7 @@ jobs:
     # PASSO 8: Deploy dos containers no Azure Container Instances
     - name: Deploy dos Containers
       run: |
-        cd terrraform
+        cd terraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
@@ -115,7 +115,7 @@ jobs:
     # PASSO 9: URLs da aplicação
     - name: Show Application URLs
       run: |
-        cd terrraform
+        cd terraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
