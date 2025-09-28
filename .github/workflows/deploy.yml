@@ -98,6 +98,7 @@ jobs:
 
     # PASSO 8: Deploy dos containers no Azure Container Instances
     - name: Deploy dos Containers
+      run: |
       cd terrraform
         export ARM_CLIENT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}"
         export ARM_CLIENT_SECRET="${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}"
