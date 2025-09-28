@@ -18,7 +18,7 @@ terraform {
   # 📦 BACKEND: Onde guardar o state file (configurado via backend.tf ou CLI)
   backend "azurerm" {
     resource_group_name  = "rg-terraform-backend"
-    storage_account_name = "tfstategitgame1758568101"
+    storage_account_name = "tfstategitgame1759010065"
     container_name       = "tfstate"
     key                  = "gitgame.tfstate"
   }
