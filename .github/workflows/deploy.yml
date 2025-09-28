@@ -105,12 +105,12 @@ jobs:
         export ARM_TENANT_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}"
         export ARM_SUBSCRIPTION_ID="${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}"
 
-      # Força recriação dos containers para usar imagens atualizadas
-      if terraform state show azurerm_container_group.gitgame >/dev/null 2>&1; then
-        terraform taint azurerm_container_group.gitgame
-      fi
+        # Força recriação dos containers para usar imagens atualizadas
+        if terraform state show azurerm_container_group.gitgame >/dev/null 2>&1; then
+          terraform taint azurerm_container_group.gitgame
+        fi
       
-      terraform apply -auto-approve
+        terraform apply -auto-approve
     
     # PASSO 9: URLs da aplicação
     - name: Show Application URLs
