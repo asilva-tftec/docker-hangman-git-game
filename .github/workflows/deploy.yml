@@ -110,7 +110,7 @@ jobs:
           terraform taint azurerm_container_group.gitgame
         fi
       
-      terraform apply -auto-approve
+        terraform apply -auto-approve
     
     # PASSO 9: URLs da aplicação
     - name: Show Application URLs
